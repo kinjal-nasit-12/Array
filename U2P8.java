@@ -43,14 +43,17 @@ class U2P8 {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         Result result = new Result();
-        System.out.println("Enter your marks: ");
+        printMessage("Enter your marks: ");
         int x = scanner.hasNextInt() ? scanner.nextInt() : 0;
         if(x==0)
         {
-            System.out.println("Invalid: Enter input in integer value.");
+            printMessage("Invalid: Enter input in integer value.");
             return ;
         }
-        System.out.println("Pass or Fail: " + result.Pass(x));
-        System.out.println("Division: " + result.division(x));
+        printMessage("Pass or Fail: " + result.Pass(x));
+        printMessage("Division: " + result.division(x));
+    }
+    public static void printMessage(String message) {
+        System.out.println(message);
     }
 }
