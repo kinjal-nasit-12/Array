@@ -14,7 +14,7 @@ interface Exam {
 
 interface Classify {
 
-    String Division(int y);
+    String division(int y);
 }
 
 class Result implements Exam, Classify {
@@ -30,7 +30,7 @@ class Result implements Exam, Classify {
     public String division(int y) {
         if (y >= 60) {
             return ("First");
-        } else if (y >= 50 && y <= 60) {
+        } else if (y >= 50 && y <60) {
             return ("Second");
         } else {
             return ("No Division.");
@@ -45,11 +45,8 @@ class U2P8 {
         Result result = new Result();
         printMessage("Enter your marks: ");
         int x = scanner.hasNextInt() ? scanner.nextInt() : 0;
-        if(x==0)
-        {
-            printMessage("Invalid: Enter input in integer value.");
-            return ;
-        }
+        scanner.close();
+
         printMessage("Pass or Fail: " + result.Pass(x));
         printMessage("Division: " + result.division(x));
     }
