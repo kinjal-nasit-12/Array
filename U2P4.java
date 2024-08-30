@@ -10,7 +10,7 @@ class U2P4 {
         printMessage("Please enter number of companies that you want to enter: ");
         int n = scanner.hasNextInt() ? scanner.nextInt() : 0;
         int a[] = new int[n];
-        String string[] = new String[5];
+        String string[] = new String[n];
         for (int i = 0; i < a.length; i++) {
             printMessage("Enter company name: ");
             string[i] = scanner.next();
