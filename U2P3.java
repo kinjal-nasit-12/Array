@@ -6,8 +6,8 @@ class U2P3 {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         printMessage("Enter the number of rows and columns for the matrices: ");
-        int rows = scanner.hasNextInt() ? scanner.nextInt():0;
-        int columns = scanner.hasNextInt() ? scanner.nextInt():0;
+        int rows = scanner.hasNextInt() ? scanner.nextInt() : 0;
+        int columns = scanner.hasNextInt() ? scanner.nextInt() : 0;
 
         int[][] mOne = getMatrix(scanner, rows, columns);
         int[][] mTwo = getMatrix(scanner, rows, columns);
@@ -32,7 +32,7 @@ class U2P3 {
         int matrix[][] = new int[rows][columns];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                System.out.println("Element [" + i + "][" + j + "]: ");
+                printMessage("Element [" + i + "][" + j + "]: ");
                 matrix[i][j] = scanner.hasNextInt() ? scanner.nextInt() : 0;
             }
         }
