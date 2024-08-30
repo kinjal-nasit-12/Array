@@ -9,9 +9,15 @@ class U2P4 {
         Scanner scanner = new Scanner(System.in);
         printMessage("Please enter number of companies that you want to enter: ");
         int n = scanner.hasNextInt() ? scanner.nextInt() : 0;
+
+        if(n<=0)
+        {
+            printMessage("You must enter a number greater than 0 fot the number of companies.");
+        }
+        else{
         int a[] = new int[n];
         String string[] = new String[n];
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < n; i++) {
             printMessage("Enter company name: ");
             string[i] = scanner.next();
             printMessage("Enter quotation: ");
@@ -28,7 +34,8 @@ class U2P4 {
         }
         printMessage("Name of the company : " + string[j] + " with lowest Quotation: " + a[j]);
     }
-
+    scanner.close();
+}
     public static void printMessage(String message) {
         System.out.println(message);
     }
