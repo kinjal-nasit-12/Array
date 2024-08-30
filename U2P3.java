@@ -1,26 +1,31 @@
 /* Write a program to find sum of two matrices of 3 x3. */
 import java.util.Scanner;
+
 class U2P3 {
 
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
-        int[][] mOne = getMatrix(scanner,3, 3);
-        int[][] mTwo = getMatrix(scanner,3, 3);
-        scanner.close();
+        printMessage("Enter the number of rows and columns for the matrices: ");
+        int rows = scanner.hasNextInt() ? scanner.nextInt():0;
+        int columns = scanner.hasNextInt() ? scanner.nextInt():0;
 
-        int[][] sum = new int[3][3];
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        int[][] mOne = getMatrix(scanner, rows, columns);
+        int[][] mTwo = getMatrix(scanner, rows, columns);
+
+        int[][] sum = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
                 sum[i][j] = mOne[i][j] + mTwo[i][j];
             }
         }
-        System.out.println("Sum of the two matrices: ");
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        printMessage("Sum of the two matrices: ");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
                 System.out.print(sum[i][j] + " ");
             }
-            System.out.println( );
+            System.out.println();
         }
+        scanner.close();
     }
 
     public static int[][] getMatrix(Scanner scanner, int rows, int columns) {
@@ -32,5 +37,9 @@ class U2P3 {
             }
         }
         return matrix;
+    }
+
+    public static void printMessage(String message) {
+        System.out.println(message);
     }
 }
