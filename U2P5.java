@@ -8,7 +8,7 @@ interface Numbers {
 }
 
 class Sum implements Numbers {
-    public float Process(int x, int y) {
+    public int Process(int x, int y) {
         return x + y;
     }
 }
