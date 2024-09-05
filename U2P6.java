@@ -8,15 +8,16 @@ Create a sub class called Numplay which provides methods for followings:
 Create a class that provides menu for above methods. Give choice from the
 command-line argument. */
 import java.util.Scanner;
-
 class NumberData {
 
     int a[] = new int[5];
     Scanner scanner = new Scanner(System.in);
-
-    public void CreateArray() {
+    public static void printMessage(String message) {
+        System.out.println(message);
+    }
+    public void createArray() {
         for (int i = 0; i < a.length; i++) {
-            System.out.println("Enter element " + i + ": ");
+            printMessage("Enter element " + i + ": ");
             a[i] = scanner.hasNextInt() ? scanner.nextInt() : 0;
         }
     }
@@ -26,45 +27,45 @@ class NumPlay extends NumberData {
 
     public void display() {
         for (int i = 0; i < 5; i++) {
-            System.out.println("Element " + i + ": " + a[i]);
+            printMessage("Element " + i + ": " + a[i]);
         }
     }
 
-    public void Sum() {
+    public void sum() {
         int sum = 0;
         for (int i = 0; i < 5; i++) {
             sum += a[i];
         }
-        System.out.println("Sum is: " + sum);
+        printMessage("Sum is: " + sum);
     }
 
-    public void Average() {
+    public void average() {
         int sum = 0;
         for (int i = 0; i < 5; i++) {
             sum += a[i];
         }
         float average = (float) sum / 5;
-        System.out.println("Average is: " + average);
+        printMessage("Average is: " + average);
     }
 
-    public void Max() {
+    public void max() {
         int maximum = 0;
         for (int i = 0; i < 5; i++) {
             if (maximum < a[i]) {
                 maximum = a[i];
             }
         }
-        System.out.println("Maximum is: " + maximum);
+        printMessage("Maximum is: " + maximum);
     }
 
-    public void Min() {
+    public void min() {
         int minimum = a[0];
         for (int i = 0; i < 5; i++) {
             if (minimum > a[i]) {
                 minimum = a[i];
             }
         }
-        System.out.println("Minimum is: " + minimum);
+        printMessage("Minimum is: " + minimum);
     }
 }
 
@@ -73,43 +74,40 @@ public class U2P6 {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         NumPlay object = new NumPlay();
-        object.CreateArray();
+        object.createArray();
         int choice;
-        do
-        {
-            printMessage("1.Display numbers entered.");
-            printMessage("2.Sum of numbers.");
-            printMessage("3.Average of numbers.");
-            printMessage("4.Maximum of numbers.");
-            printMessage("5.Minimum of numbers.");
-            printMessage("6.Exit.");
-            printMessage("Enter your choice: ");
-            choice = scanner.hasNextInt() ? scanner.nextInt() : 0;
-            switch (choice) {
-                case 1:
-                    object.display();
-                    break;
-                case 2:
-                    object.Sum();
-                    break;
-                case 3:
-                    object.Average();
-                    break;
-                case 4:
-                    object.Max();
-                    break;
-                case 5:
-                    object.Min();
-                    break;
-                case 6:
-                    printMessage("Exiting the program.");
-                    break;
-                default:
-                    printMessage("Invalid choice.");
-                    break;
-            }
+        printMessage("1.Display numbers entered.");
+        printMessage("2.Sum of numbers.");
+        printMessage("3.Average of numbers.");
+        printMessage("4.Maximum of numbers.");
+        printMessage("5.Minimum of numbers.");
+        printMessage("6.Exit.");
+        printMessage("Enter your choice: ");
+        choice = scanner.hasNextInt() ? scanner.nextInt() : 0;
+        switch (choice) {
+            case 1:
+                object.display();
+                break;
+            case 2:
+                object.sum();
+                break;
+            case 3:
+                object.average();
+                break;
+            case 4:
+                object.max();
+                break;
+            case 5:
+                object.min();
+                break;
+            case 6:
+                printMessage("Exiting the program.");
+                break;
+            default:
+                printMessage("Invalid choice.");
+                break;
         }
-        while(choice!=5);
+        scanner.close();
     }
     public static void printMessage(String message) {
         System.out.println(message);
