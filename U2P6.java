@@ -14,7 +14,7 @@ class Printer {
     public Scanner scanner;
 
     public Printer(Scanner scanner) {
-        this.scanner = new Scanner(System.in);
+        this.scanner = scanner;
     }
 
     public void printMessage(String message) {
