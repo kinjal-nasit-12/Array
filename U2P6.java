@@ -1,4 +1,3 @@
-
 /* Create a class called NumberData that accept any array of the five numbers.
 Create a sub class called Numplay which provides methods for followings:
 1. Display numbers entered.
@@ -31,7 +30,7 @@ class NumberData extends Printer {
     }
 
     public void createArray() {
-        printMessage("Enter number of array that you want to processs: ");
+        printMessage("Enter number of array that you want to process: ");
         int n = scanner.hasNextInt() ? scanner.nextInt() : 0;
         numberOfArray = new int[n];
         for (int i = 0; i < numberOfArray.length; i++) {
